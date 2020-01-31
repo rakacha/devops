@@ -1,0 +1,4 @@
+---
+# handlers file for ./roles/tomcat
+- name: Start tomcat service
+  shell: "{{tomcat_home}}/bin/startup.sh"

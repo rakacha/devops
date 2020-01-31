@@ -1,0 +1,13 @@
+---
+# tasks file for ./roles/tomcat
+
+- name: Extract tomcat tar file
+  unarchive:
+   src: apache-tomcat-9.0.30.tar.gz
+   dest: /home/osgdev/ansilab/tomcat
+
+- name: Change the tomcat port
+  template:
+   src: server.xml.j2
+   dest: "{{tomcat_home}}/conf/server.xml"
+  notify: Start tomcat service

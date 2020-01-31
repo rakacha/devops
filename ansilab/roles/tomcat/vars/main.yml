@@ -1,0 +1,4 @@
+---
+# vars file for ./roles/tomcat
+tomcat_port: 10001
+tomcat_home: /home/osgdev/ansilab/tomcat/apache-tomcat-9.0.30

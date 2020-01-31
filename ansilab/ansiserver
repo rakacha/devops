@@ -1,0 +1,5 @@
+[local]
+localhost ansible_connection=local
+TG-DEVOPS-OS984 hostname=127.0.1.1 ansible_ssh_user=osgdev
+TG-DEVOPS-OS984.wipro.com hostname=127.0.1.1 ansible_ssh_user=osgdev
+10.198.108.144 ansible_connection=local
