@@ -5,9 +5,24 @@
   unarchive:
    src: apache-tomcat-9.0.30.tar.gz
    dest: /home/osgdev/ansilab/tomcat
+   owner: jenkins
+   group: jenkins
+   mode: '0777'
 
 - name: Change the tomcat port
   template:
    src: server.xml.j2
    dest: "{{tomcat_home}}/conf/server.xml"
+   owner: jenkins
+
+- name: Copy the bookstore application war
+  copy:
+    src: /var/lib/jenkins/workspace/ILP_Job_mvn_build/ILP_CI-CD/BookStore/target/ILP_Bookstore.war
+    dest: "{{tomcat_home}}/webapps"
+    owner: jenkins
   notify: Start tomcat service
+  
+  
+
+
+
